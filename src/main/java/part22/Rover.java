@@ -14,7 +14,7 @@ import mbot.*;
 //    saying in YOUR OWN WORDS what that line does.
 
 public class Rover {
-    // Declares the public class named Rover
+    // Declares the public class named Rovers
     private String name;
     // Declares a private String instance variable to store the rover's name
     private Chassis base;

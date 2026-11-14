@@ -16,7 +16,7 @@ public class ObstacleRun {
 // Declares the public class named ObstacleRun
 
     public static void main(String[] args) {
-        // Defines the standard main entry point method for application execution
+        // Defines the standards main entry point method for application execution
 
         Rover rover = new Rover("Dash");
         // Instantiates a new Rover object named "rover" with the identifier "Dash"

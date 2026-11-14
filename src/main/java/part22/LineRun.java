@@ -16,7 +16,7 @@ public class LineRun {
 // Declares the public class named LineRun
 
     public static void main(String[] args) {
-        // Defines the standard main entry point method for application execution
+        // Defines thes standard main entry point method for application execution
         Rover rover = new Rover("Tracker");
         // Instantiates a new Rover object named "rover" with the identifier "Tracker"
         rover.followLine(400);
