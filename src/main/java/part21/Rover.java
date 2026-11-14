@@ -25,6 +25,7 @@ public class Rover {
     // Declares a private Chassis instance variable representing the rover's drivetrain/base
     private Ultrasonic eyes;
     // Declares a private Ultrasonic instance variable representing the rover's distance sensor
+    private LineSensor floor;
 
     public Rover(String name){
         // Constructor taking a name parameter to initialize a new Rover instance
@@ -34,6 +35,7 @@ public class Rover {
         // Instantiates and assigns a new Chassis object to the base variable
         this.eyes = new Ultrasonic(base);
         // Instantiates and assigns a new Ultrasonic sensor connected to the base
+        this.floor = new LineSensor(base);
     }
     // Ends the Rover constructor block
 
@@ -59,12 +61,18 @@ public class Rover {
             // Commands the chassis base to drive straight forward by 5 units
         }
         // Ends the while loop block
+
+    }
+    public void driveToTape(){
+        while(!floor.seesTape()){
+            base.straight(2);
+        }
+
+    }
+    void forward(double cm){
+        base.straight(cm);
     }
     // Ends the driveUntilBlocked method block
 
-    public static void main(String[] args) {
-        // Defines the standard main entry point method for application execution
-    }
-    // Ends the main method block
 }
 // Ends the Rover class block
