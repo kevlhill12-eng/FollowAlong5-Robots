@@ -14,7 +14,35 @@ import mbot.*;
 //    saying in YOUR OWN WORDS what that line does.
 //
 // SECTION C — STRETCH B adds a LineSensor and two methods to this class.
-
+@MBotLab(world = "wall-ahead")
 public class Rover {
 
+    private String name;
+    private Chassis base;
+    private Ultrasonic eyes;
+
+    public Rover(String name){
+        this.name = name;
+        this.base = new Chassis();
+        this.eyes = new Ultrasonic(base);
+    }
+    public String toString(){
+        return name + " the rover";
+
+    }
+    public boolean somethingAhead(double cm){
+        return eyes.distance() < cm;
+    }
+
+    public void driveUntilBlocked(){
+        while(!somethingAhead(20)){
+            base.straight(5);
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+
+    }
 }
