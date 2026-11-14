@@ -8,8 +8,18 @@ import mbot.*;
 // Stretch B adds a new class, Painter, at the bottom of this file.
 //
 // There is no main method here yet. Typing it is part of the stretch.
-
+/*
+Painter
+ */
 @MBotLab(world = "color-zones")
 public class Stretch {
+    public static void main(String[] args) {
+        Painter p = new Painter();
+        System.out.println(p instanceof Painter);
+        System.out.println(p instanceof MBot2);
+        System.out.println(p instanceof Chassis);
+        p.driveToRed();
+    }
 
-}
+
+    }
