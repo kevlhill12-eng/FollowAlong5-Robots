@@ -10,6 +10,7 @@ import mbot.*;
 // SECTION B — COMMENTS: put a // comment ABOVE every line of code, in YOUR OWN WORDS.
 
 public class FlashyBot extends MBot2 {
+    private int turns;
     // Declares the FlashyBot public class which inherits from the MBot2 base robot class
     public FlashyBot() {
 // Defines the constructor method for instantiating FlashyBot objects
@@ -30,6 +31,7 @@ public class FlashyBot extends MBot2 {
 // Calls the parent class turnLeft method to actually execute the turn by the specified degrees
         turnLedOff(1);
 // Turns off LED 1 after the turn is complete
+        turns++;
     }
 // Ends the turnLeft method scope
 
@@ -45,9 +47,13 @@ public class FlashyBot extends MBot2 {
 // Calls the parent class turnRight method to actually execute the turn by the specified degrees
         turnLedOff(1);
 // Turns off LED 1 after the turn is complete
+        turns++;
     }
 // Ends the turnRight method scope
-
+@Override
+public String toString() {
+    return "FlashyBot (" + turns + " turns)";
+}
     @Override
 // Indicates that this method overrides the run method defined in the parent class
     public void run() {

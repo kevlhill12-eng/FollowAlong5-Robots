@@ -12,11 +12,13 @@ import mbot.*;
 //
 // SECTION B — COMMENTS: when you finish, put a // comment ABOVE every line of code,
 //    saying in YOUR OWN WORDS what that line does.
+
 public class CarefulBot extends MBot2 {
-    // Declares the CarefulBot public class which inherits from the MBot2 base robot class
+    private int refused;// Declares the CarefulBot public class which inherits from the MBot2 base robot class
     public CarefulBot() {
 // Defines the constructor method for instantiating CarefulBot objects
         super();
+
 // Calls the parent class MBot2 constructor to initialize inherited properties
     }
     // Ends the constructor scope
@@ -31,6 +33,7 @@ public class CarefulBot extends MBot2 {
         } else {
 // Executes if the obstacle is too close (sensor reading is less than or equal to cm + 20)
             turnLedOn(1, 255, 0, 0);
+            refused++;
 // Turns on LED 1 with red color (RGB: 255, 0, 0) to signal a warning state
             System.out.println("CarefulBot: not driving " + cm + " cm, too close");
 // Prints a warning message to the console indicating the robot refused to move due to proximity
@@ -38,6 +41,10 @@ public class CarefulBot extends MBot2 {
 // Ends the conditional block
     }
 // Ends the straight method scope
+@Override
+public String toString() {
+    return "CarefulBot (refused " + refused + " moves)";
+}
 
     @Override
 // Indicates that this method overrides the run method defined in the parent class
@@ -50,6 +57,8 @@ public class CarefulBot extends MBot2 {
         }
 // Ends the loop scope
     }
+
+
 // Ends the run method scope
 }
 // Ends the CarefulBot class scope
