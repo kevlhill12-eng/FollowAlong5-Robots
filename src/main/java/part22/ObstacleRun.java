@@ -11,17 +11,22 @@ import mbot.*;
 // SECTION B — COMMENTS: put a // comment ABOVE every line of code, in YOUR OWN WORDS.
 
 @MBotLab(world = "obstacles")
+// Annotation configuring the MBotLab simulation environment with the "obstacles" world
 public class ObstacleRun {
-    public static void main(String[] args) {
+// Declares the public class named ObstacleRun
 
+    public static void main(String[] args) {
+        // Defines the standard main entry point method for application execution
 
         Rover rover = new Rover("Dash");
+        // Instantiates a new Rover object named "rover" with the identifier "Dash"
         rover.reachGoal();
+        // Invokes the reachGoal method on the rover object to navigate through obstacles to the destination
         System.out.println(rover + " reached the goal");
-
-
+        // Prints the rover's string representation combined with completion text to the console
 
     }
-
+    // Ends the main method block
 
 }
+// Ends the ObstacleRun class block
